@@ -67,4 +67,24 @@ const isAuthenticated = async (req, res) => {
     });
   }
 };
-module.exports = { create, signIn, isAuthenticated };
+const isAdmin = async (req, res) => {
+  try {
+    // const token = req.headers["x-access-token"];
+    const response = await userService.isAdmin(req.body.id);
+    return res.status(200).json({
+      success: true,
+      message: "Succesfully fetched wether user is admin or not.",
+      data: response,
+      err: {},
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      message: "Something went wrong",
+      data: {},
+      success: false,
+      err: error,
+    });
+  }
+};
+module.exports = { create, signIn, isAuthenticated, isAdmin };
