@@ -12,6 +12,7 @@
 4. [Setup Instructions](#4-setup-instructions)
 5. [Database Design](#5-database-design)
 6. [Acknowledgements](#6-acknowledgements)
+7. [Contributing](#7-contributing)
 
 ## 1. Project Overview
 
@@ -27,8 +28,46 @@ AuthService is a microservice designed to handle user authentication and authori
 - **jsonwebtoken**: Library for generating and verifying JSON Web Tokens (JWT).
 - **dotenv**: Module to load environment variables from a .env file.
 - **nodemon**: Utility that monitors for changes in the source code and automatically restarts the server.
+## 3. Setup Instructions
 
-## 3. Endpoints
+1. **Clone the repository**:
+   ```sh
+   git clone https://github.com/amansharma999/Auth_Service.git
+   cd authservice
+   ```
+
+2. **Install dependencies**:
+   ```sh
+   npm install
+   ```
+
+3. **Set up environment variables**:
+   Create a .env file in the root directory and add the following variables:
+   ```env
+   PORT=3000
+   DB_SYNC=true
+   JWT_KEY=your_jwt_secret_key
+   ```
+
+4. **Configure the database**:
+   Update the database configuration in 
+
+config.json
+
+ with your database credentials.
+
+5. **Run migrations **:
+   ```sh
+   npx sequelize-cli db:migrate
+   ```
+
+6. **Start the server**:
+   ```sh
+   npm start
+   ```
+
+
+## 4. Endpoints
 
 ### 1. Signup
 
@@ -82,48 +121,6 @@ AuthService is a microservice designed to handle user authentication and authori
   - **Code**: `400 Bad Request`
   - **Content**: `{ "message": "Something went wrong", "data": {}, "success": false, "err": "User id not given in the request" }`
 
-## 4. Setup Instructions
-
-1. **Clone the repository**:
-   ```sh
-   git clone https://github.com/amansharma999/Auth_Service.git
-   cd authservice
-   ```
-
-2. **Install dependencies**:
-   ```sh
-   npm install
-   ```
-
-3. **Set up environment variables**:
-   Create a 
-
-.env
-
- file in the root directory and add the following variables:
-   ```env
-   PORT=3000
-   DB_SYNC=true
-   JWT_KEY=your_jwt_secret_key
-   ```
-
-4. **Configure the database**:
-   Update the database configuration in 
-
-config.json
-
- with your database credentials.
-
-5. **Run migrations and seeders**:
-   ```sh
-   npx sequelize-cli db:migrate
-   npx sequelize-cli db:seed:all
-   ```
-
-6. **Start the server**:
-   ```sh
-   npm start
-   ```
 
 ## 5. Database Design
 
