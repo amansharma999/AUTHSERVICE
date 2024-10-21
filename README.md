@@ -71,7 +71,7 @@ config.json
 
 ### 1. Signup
 
-- **URL**: `/api/v1/signup`
+- **URL**: `/authservice/api/v1/signup`
 - **Method**: `POST`
 - **Params**:
   - `email` (string, required): User's email.
@@ -85,7 +85,7 @@ config.json
 
 ### 2. Signin
 
-- **URL**: `/api/v1/signin`
+- **URL**: `/authservice/api/v1/signin`
 - **Method**: `POST`
 - **Params**:
   - `email` (string, required): User's email.
@@ -99,7 +99,7 @@ config.json
 
 ### 3. Check Authentication
 
-- **URL**: `/api/v1/isAuthenticated`
+- **URL**: `/authservice/api/v1/isAuthenticated`
 - **Method**: `GET`
 - **Success Response**:
   - **Code**: `200 OK`
@@ -110,7 +110,7 @@ config.json
 
 ### 4. Check Admin Role
 
-- **URL**: `/api/v1/isAdmin`
+- **URL**: `/authservice/api/v1/isAdmin`
 - **Method**: `GET`
 - **Params**:
   - `id`(integer, required): User's ID.
