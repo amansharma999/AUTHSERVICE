@@ -4,6 +4,8 @@ const router = express.Router();
 const UserController = require("../../controllers/user-controller");
 const { AuthRequestValidators } = require("../../middlewares/index");
 
+
+
 router.post(
   "/signup",
   AuthRequestValidators.validateUserAuth,

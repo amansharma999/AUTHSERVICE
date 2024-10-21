@@ -23,3 +23,4 @@ const validateIsAdminRequest = (req, res, next) => {
   next();
 };
 module.exports = { validateUserAuth, validateIsAdminRequest };
+
